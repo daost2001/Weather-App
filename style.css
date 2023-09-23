@@ -1,0 +1,106 @@
+@font-face {
+    font-family: 'QuackQuackGoTitle';
+    src: url('fonts/Cagliostro-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Cantarell'; 
+    src: url('fonts/Cantarell-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    border: none;
+}
+body {
+    background-image: url('https://source.unsplash.com/1600x900/?landscape');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height:100vh;
+    overflow: hidden;
+  }
+.card {
+    position: absolute;
+    top: 35%;
+    left: 42%;
+    margin-top: -50px;
+    margin-left: -50px;
+}
+.weather-card {
+    font-family: 'Cantarell'; 
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+    background-color: #000000;
+    padding: 30px 25px 25px 25px;
+    margin-left: 20px;
+    font-weight: normal;
+    color: white;
+    font-size: 18px;
+    max-width: 300px;
+    max-height: 450px;
+    opacity: 80%;
+}
+.weather-card >.search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 100%;
+}
+.weather-card >.search> button {
+    margin: 0.5em;
+    border-radius: 50%;
+    border: none;
+    height: 44px;
+    width: 44px;
+    outline: none;
+    background: #7c7c7c2b;
+    color: white;
+}
+.weather-card > .search> .search-button:hover {
+    background: #7c7c7c6b;
+}
+.weather-card > .search> .search-bar {
+    border: none;
+    outline: none;
+    padding: 0.4em 1em;
+    border-radius: 24px;
+    background: #7c7c7c2b;
+    color: white;
+    font-family: inherit;
+    font-size: 105%;
+    width: calc(100% - 120px);
+}
+
+.weather-card >.weather>.temp {
+    margin: 0;
+    margin-bottom: 0.4em;
+}
+.weather-card >.weather>img {
+    height: 100px;
+    display: block;
+    text-align: center;
+}
+.weather-card >.weather>.description {
+    text-transform: Capitalize;
+}
+
+.weather-card >.weather.loading{
+    visibility: hidden;
+    max-height: 20px;
+    position: relative
+}
+.weather-card > .weather.loading:after{
+    visibility: visible;
+    content: "Loading...";
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 20px;
+}
+.flex {
+    display: flex;
+    align-items: center;
+  }
