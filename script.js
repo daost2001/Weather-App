@@ -48,18 +48,16 @@ function getPosition() {
     });
 }
 async function main() {
-    /* var position = await getPosition();  // wait for getPosition to complete to retrieve coordinates of current location
-    console.log(position);
-    const location = await fetch( // wait for reverse geolocation api to retrieve name of current location from coordinates 
-        "http://api.openweathermap.org/geo/1.0/reverse?lat="
-        + position.coords.latitude 
+    var position = await getPosition();  // wait for getPosition to complete to retrieve coordinates of current location
+
+    const data = await fetch(
+        "https://api.openweathermap.org/data/2.5/weather?lat="
+        + position.coords.latitude  
         + "&lon=" 
-        + position.coords.longitude 
+        + position.coords.longitude
         + "&appid="
         + apiKey
-    )
-    console.log(location);
-    var data = await location.json();// store data retrieved from reverse geolocation openweather api */
-    weather.fetchWeather("anaheim");// retrieve weather from openweather api
+    ).then((response) => response.json());
+    weather.fetchWeather(data.name);// retrieve weather from openweather api
 }
 main();
