@@ -49,7 +49,6 @@ function getPosition() {
 }
 async function main() {
     var position = await getPosition();  // wait for getPosition to complete to retrieve coordinates of current location
-
     const data = await fetch(
         "https://api.openweathermap.org/data/2.5/weather?lat="
         + position.coords.latitude  
